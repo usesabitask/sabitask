@@ -1,23 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { BecomeExpertSection } from "@/components/landing/become-expert-section";
+import { FindExpertSection } from "@/components/landing/find-expert-section";
+import { Footer } from "@/components/landing/footer";
+import { HeroSection } from "@/components/landing/hero-section";
+import { Navbar } from "@/components/landing/navbar";
+import { ServicesSection } from "@/components/landing/services-section";
+import { WhatsAppCTASection } from "@/components/landing/whatsapp-cta-section";
+
+const title = "SabiTask — Academic Support, Powered by Students";
+const description =
+  "Get academic guidance from talented student experts. Find a SabiExpert for tutoring, research and data analysis support — or become one and earn by helping others learn.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <a
+        href="#main"
+        className="sr-only z-[60] rounded-full bg-primary px-5 py-3 font-semibold text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Skip to content
+      </a>
+      <Navbar />
+      <main id="main">
+        <HeroSection />
+        <ServicesSection />
+        <FindExpertSection />
+        <BecomeExpertSection />
+        <WhatsAppCTASection />
+      </main>
+      <Footer />
+    </>
   );
 }

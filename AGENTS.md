@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Landing page sections live in `src/components/landing/`, one component per section, composed in `src/routes/index.tsx`; it is a single scrolling page by explicit request, so in-page `#anchor` navigation is intended.
+- All external/placeholder URLs (WhatsApp channel, socials, sign-up destinations) live in `src/config/site.ts` so they can be swapped without touching components.
+- Brand icons (WhatsApp, socials) are inline SVGs in `brand-icons.tsx` because lucide-react no longer ships brand logos.
