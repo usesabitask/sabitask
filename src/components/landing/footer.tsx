@@ -26,7 +26,7 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="max-w-sm">
           <a href="#top" aria-label="SabiTask home" className="inline-block rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
-            <Logo tone="light" className="h-14" />
+            <Logo tone="light" className="h-9 sm:h-10" />
           </a>
           <p className="mt-4 leading-relaxed text-surface-dark-muted">
             A student-powered academic support marketplace connecting university students with

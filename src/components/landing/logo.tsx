@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 
-import logoAsset from "@/assets/sabiotask-logo.png.asset.json";
-import logoLightAsset from "@/assets/sabiotask-logo-light.png.asset.json";
+import logoSrc from "@/assets/sabitask-logo.png";
+import logoLightSrc from "@/assets/sabitask-logo-light.png";
 
 /**
  * SabiTask logo. `tone="light"` swaps in the white version for dark backgrounds.
+ * Bundled with the app (not CDN-hosted) so it always ships with each publish.
  */
 export function Logo({
   tone = "dark",
@@ -15,12 +16,12 @@ export function Logo({
 }) {
   return (
     <img
-      src={tone === "dark" ? logoAsset.url : logoLightAsset.url}
+      src={tone === "dark" ? logoSrc : logoLightSrc}
       alt="SabiTask"
-      width={1451}
-      height={874}
+      width={900}
+      height={198}
       draggable={false}
-      className={cn("h-11 w-auto select-none", className)}
+      className={cn("h-8 w-auto select-none sm:h-9", className)}
     />
   );
 }
