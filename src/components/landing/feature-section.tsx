@@ -1,7 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { CtaLink } from "./cta-link";
+import { ctaVariants } from "./cta-link";
 import { Eyebrow } from "./section-heading";
 
 type FeatureSectionProps = {
@@ -10,7 +10,7 @@ type FeatureSectionProps = {
   title: string;
   description: string;
   benefits: string[];
-  cta: { label: string; href: string; variant?: "primary" | "outline" };
+  cta: { label: string; variant?: "primary" | "outline"; onClick: () => void };
   image: { src: string; alt: string };
   /** "right" = text left, image right. "left" = image left, text right. Mobile always stacks text first. */
   imagePosition: "left" | "right";
@@ -50,9 +50,13 @@ export function FeatureSection({
             ))}
           </ul>
 
-          <CtaLink href={cta.href} variant={cta.variant} className="mt-10 w-full sm:w-auto">
+          <button
+            type="button"
+            onClick={cta.onClick}
+            className={cn(ctaVariants({ variant: cta.variant }), "mt-10 w-full sm:w-auto")}
+          >
             {cta.label}
-          </CtaLink>
+          </button>
         </div>
 
         <div className={cn("relative", imageLeft && "lg:order-1")}>

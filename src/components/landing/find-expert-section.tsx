@@ -1,9 +1,14 @@
 import findExpertImg from "@/assets/find-expert.jpg";
 import { siteConfig } from "@/config/site";
+import { useState } from "react";
+
 import { FeatureSection } from "./feature-section";
+import { FormModal } from "./form-modal";
 
 export function FindExpertSection() {
+  const [open, setOpen] = useState(false);
   return (
+    <>
     <FeatureSection
       id="find-expert"
       eyebrow="Find a SabiExpert"
@@ -15,12 +20,14 @@ export function FindExpertSection() {
         "Get guidance at student-friendly prices.",
         "Learn at your own pace.",
       ]}
-      cta={{ label: "Find a SabiExpert", href: siteConfig.findExpertUrl }}
+      cta={{ label: "Find a SabiExpert", onClick: () => setOpen(true) }}
       image={{
         src: findExpertImg,
         alt: "Two university students studying together in a library, one explaining notes while the other smiles",
       }}
       imagePosition="right"
     />
+    <FormModal open={open} onOpenChange={setOpen} kind="student" />
+    </>
   );
 }
