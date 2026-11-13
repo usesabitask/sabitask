@@ -72,6 +72,7 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --color-primary-hover: var(--primary-hover);
   --color-primary-soft: var(--primary-soft);
+  --color-primary-decor: var(--primary-decor);
   --color-accent-soft: var(--accent-soft);
   --color-surface-dark: var(--surface-dark);
   --color-surface-dark-foreground: var(--surface-dark-foreground);
@@ -97,6 +98,7 @@
   --primary-hover: oklch(0.388 0.15 292.3);
   --primary-foreground: oklch(1 0 0);
   --primary-soft: oklch(0.942 0.021 301.1);
+  --primary-decor: oklch(0.565 0.163 292.1);
   --secondary: oklch(0.942 0.021 301.1);
   --secondary-foreground: oklch(0.388 0.15 292.3);
   --muted: oklch(0.955 0.012 299);

@@ -59,7 +59,7 @@ export function FeatureSection({
           <div
             aria-hidden="true"
             className={cn(
-              "absolute -bottom-4 size-full rounded-3xl bg-primary-soft",
+              "absolute -bottom-4 size-full rounded-3xl bg-primary-decor",
               imageLeft ? "-left-4" : "-right-4",
             )}
           />
