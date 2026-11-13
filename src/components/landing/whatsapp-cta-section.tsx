@@ -22,7 +22,6 @@ export function WhatsAppCTASection() {
               from the SabiTask community.
             </p>
             <CtaLink href={siteConfig.whatsappChannelUrl} variant="light" className="mt-9 w-full sm:w-auto">
-              <WhatsAppIcon className="size-5" />
               Join Our WhatsApp Channel
             </CtaLink>
           </div>
